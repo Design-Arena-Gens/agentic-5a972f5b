@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniShop ? Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">MiniShop</a>
+        <nav class="nav">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link active" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container admin">
+      <section id="loginSection" class="card">
+        <h1 class="section-title">Admin Login</h1>
+        <form id="loginForm" class="form">
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input id="password" class="input" type="password" placeholder="Enter admin password" required />
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Login</button>
+          </div>
+          <p class="muted">Default password: <strong>admin123</strong> (change it after login)</p>
+        </form>
+      </section>
+
+      <section id="dashboardSection" class="admin-grid hidden">
+        <div class="admin-header">
+          <h1 class="section-title">Dashboard</h1>
+          <div class="admin-actions">
+            <button id="logoutBtn" class="button">Logout</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Add / Edit Product</h2>
+          <form id="productForm" class="form">
+            <input type="hidden" id="productId" />
+            <div class="form-row two-col">
+              <div>
+                <label for="title">Title</label>
+                <input id="title" class="input" required />
+              </div>
+              <div>
+                <label for="price">Price (USD)</label>
+                <input id="price" class="input" type="number" min="0" step="0.01" required />
+              </div>
+            </div>
+            <div class="form-row two-col">
+              <div>
+                <label for="category">Category</label>
+                <input id="category" class="input" required />
+              </div>
+              <div>
+                <label for="image">Image URL</label>
+                <input id="image" class="input" placeholder="https://..." required />
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="description">Description</label>
+              <textarea id="description" class="input" rows="4" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Save Product</button>
+              <button class="button" id="resetFormBtn" type="button">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Products</h2>
+            <div class="card-actions">
+              <input id="adminSearch" class="input" type="search" placeholder="Search products..." />
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="table" id="productsTable">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th class="numeric">Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Security</h2>
+          <form id="passwordForm" class="form inline">
+            <div class="form-row">
+              <label for="newPassword">New password</label>
+              <input id="newPassword" class="input" type="password" required />
+            </div>
+            <div class="form-actions">
+              <button class="button" type="submit">Update Password</button>
+            </div>
+          </form>
+          <p class="muted small">Password stored as SHA-256 hash in this browser only.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>? <span id="year"></span> MiniShop</span>
+        <a class="footer-link" href="/">Home</a>
+      </div>
+    </footer>
+
+    <script src="/utils.js" type="module"></script>
+    <script src="/admin.js" type="module"></script>
+  </body>
+</html>

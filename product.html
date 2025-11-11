@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniShop ? Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">MiniShop</a>
+        <nav class="nav">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <a href="/" class="back-link">? Back to products</a>
+      <section id="productDetail" class="product-detail" aria-live="polite"></section>
+
+      <template id="productDetailTemplate">
+        <div class="product-detail-grid">
+          <div class="detail-image-wrap">
+            <img class="detail-image" alt="" />
+          </div>
+          <div class="detail-body">
+            <h1 class="detail-title"></h1>
+            <div class="detail-meta">
+              <span class="detail-price"></span>
+              <span class="detail-category pill"></span>
+            </div>
+            <p class="detail-description"></p>
+          </div>
+        </div>
+      </template>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>? <span id="year"></span> MiniShop</span>
+        <a class="footer-link" href="/admin.html">Admin</a>
+      </div>
+    </footer>
+
+    <script src="/utils.js" type="module"></script>
+    <script src="/product.js" type="module"></script>
+  </body>
+</html>

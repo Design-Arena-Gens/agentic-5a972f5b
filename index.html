@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniShop ? Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">MiniShop</a>
+        <nav class="nav">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1 class="hero-title">Find your next favorite product</h1>
+        <p class="hero-subtitle">Simple, fast and delightful shopping experience.</p>
+      </section>
+
+      <section class="controls">
+        <div class="control-group">
+          <input id="searchInput" class="input" type="search" placeholder="Search products..." aria-label="Search products" />
+        </div>
+        <div class="control-group">
+          <select id="categorySelect" class="select" aria-label="Filter by category">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="productsGrid" class="products-grid" aria-live="polite"></section>
+
+      <template id="productCardTemplate">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <img class="product-image" alt="" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-title"></h3>
+            <div class="product-meta">
+              <span class="product-price"></span>
+            </div>
+            <a class="button button-primary product-details-link">View Details</a>
+          </div>
+        </article>
+      </template>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>? <span id="year"></span> MiniShop</span>
+        <a class="footer-link" href="/admin.html">Admin</a>
+      </div>
+    </footer>
+
+    <script src="/utils.js" type="module"></script>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
